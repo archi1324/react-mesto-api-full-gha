@@ -1,0 +1,21 @@
+.popup__subtitle{
+    width: 358px;
+    height: 27px;
+    font-family: 'Inter', 'Arial', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
+    margin: 0px 0px 0px 34px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    border-bottom: 1px solid rgba(0,0,0,0.2);
+}
+
+@media (max-width:600px){
+.popup__subtitle{
+    margin: 27px 0 0 20px;
+    max-width: 238px;
+}
+}

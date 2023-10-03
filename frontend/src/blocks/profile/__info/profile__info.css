@@ -1,0 +1,19 @@
+.profile__info {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-areas:
+    'avatar name edit'
+    'avatar description .';
+  row-gap: 0px;
+  max-width: 486px;
+}
+
+@media only screen and (max-width: 767px) {
+  .profile__info {
+    grid-template-areas:
+      'avatar avatar'
+      'name edit'
+      'description description';
+  }
+}

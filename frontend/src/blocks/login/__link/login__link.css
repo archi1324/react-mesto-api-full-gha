@@ -1,0 +1,10 @@
+.login__link {
+    display: flex;
+    justify-content: center;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 17px;
+    line-height: 1.2;
+    color: #FFFFFF;
+    text-decoration: none;
+}
