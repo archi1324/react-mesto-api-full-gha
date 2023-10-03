@@ -1,7 +1,0 @@
-.popup__photo-zoom {
-    max-width: 75vw;
-    max-height: 75vh;
-    background-size: contain;
-    object-fit: cover;
-    background-color: #fff;
-  }
