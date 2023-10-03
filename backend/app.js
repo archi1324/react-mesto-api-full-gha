@@ -6,10 +6,12 @@ const { celebrate, Joi, errors } = require('celebrate');
 const auth = require('./middlewares/auth');
 const { login, createUser } = require('./controllers/users');
 const NotFound = require('./errors/NotFound(404)');
+const { requestLogger, errorLogger } = require('./middlewares/logger');
 
 const { PORT = 3000 } = process.env;
 mongoose.connect('mongodb://127.0.0.1:27017/mestodb');
 const app = express();
+app.use(requestLogger);
 app.use(helmet());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -37,6 +39,7 @@ app.use('/cards', require('./routes/cards'));
 
 app.use('*', (req, res, next) => next(new NotFound('Маршрут не найден')));
 
+app.use(errorLogger);
 app.use(errors());
 app.use((err, req, res, next) => {
   const { status = 500, message } = err;
