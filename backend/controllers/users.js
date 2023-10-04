@@ -6,6 +6,8 @@ const Conflict = require('../errors/Conflict(409)');
 const NotFound = require('../errors/NotFound(404)');
 const Unauthorized = require('../errors/Unauthorized(401)');
 
+const { NODE_ENV, JWT_SECRET } = process.env;
+
 module.exports.getUsers = (req, res, next) => {
   User.find({})
     .then((users) => res.status(200).send({ users }))
@@ -102,7 +104,7 @@ module.exports.login = (req, res, next) => {
       }
       const token = jwt.sign(
         { _id: user._id },
-        'supersecret-key-for-signing',
+        NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret',
         { expiresIn: '7d' },
       );
       return res.send({ token });
