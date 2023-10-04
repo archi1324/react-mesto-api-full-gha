@@ -79,7 +79,7 @@ class Api {
 }
 
 const api = new Api({
-  url: 'https://mesto.sayahov.nomoredomainsrocks.ru',
+  url: 'https://api.mesto.sayahov.nomoredomainsrocks.ru',
   headers: {
     authorization: `Bearer ${localStorage.getItem("jwt")}`,
     'content-type': 'application/json'
