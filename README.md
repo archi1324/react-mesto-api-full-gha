@@ -9,7 +9,7 @@
 
 ## Ссылки на проект
 
-IP 158.160.71.166
+IP 158.160.71.165
 
 Frontend https://mesto.sayahov.nomoredomainsrocks.ru
 
